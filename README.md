@@ -1,1 +1,3 @@
 # Solar_Disaggregation
+# Overview 
+This project takes the net load data measured by smart meters and other widely available environmental measurements (e.g., publicly monitored solar irradiance and temperature) as inputs, and disaggregate the net load traces into BTM solar generation, and regular (non-EV) load traces. Notably, the developed algorithms do not rely on any separately metered data of solar generation behind the smart meters. Rather, novel methods that effectively exploit the temporal correlations and cross-customer correlations of the customers' energy consumption are developed to achieve accurate BTM solar estimation. 
