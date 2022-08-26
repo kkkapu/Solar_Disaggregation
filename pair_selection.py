@@ -15,33 +15,36 @@ class Helper:
 
         grid1 = data_copy[data_copy.index == kk1]["grid"].values[0]
         grid2 = data_copy[data_copy.index == kk2]["grid"].values[0]
-
-        score = 0
-        n = 1.5
-        score += (
-            365 ** (1 / n)
-            - abs(withoutsolar.iloc[i]["dayofyear"] - withoutsolar.iloc[j]["dayofyear"])
-            ** (1 / n)
-        ) / 365 ** (1 / n)
-        n = 2
-        score += (
-            1440 ** (1 / n)
-            - abs(
-                withoutsolar.iloc[i]["minuteofday"]
-                - withoutsolar.iloc[j]["minuteofday"]
-            )
-            ** (1 / n)
-        ) / 1440 ** (1 / n)
-        n = 3
-        score += (
-            self.max_loadgap ** (1 / n)
-            - abs(
-                withoutsolar.iloc[i]["consumption"]
-                - withoutsolar.iloc[j]["consumption"]
-            )
-            ** (1 / n)
-        ) / self.max_loadgap ** (1 / n)
-        self.total_pairs.append([i, j, score])
+        
+        threshold=np.std(data_copy["grid"])
+        
+        if abs(grid1-grid2)<=threshold:
+            score = 0
+            n = 1.5
+            score += (
+                365 ** (1 / n)
+                - abs(withoutsolar.iloc[i]["dayofyear"] - withoutsolar.iloc[j]["dayofyear"])
+                ** (1 / n)
+            ) / 365 ** (1 / n)
+            n = 2
+            score += (
+                1440 ** (1 / n)
+                - abs(
+                    withoutsolar.iloc[i]["minuteofday"]
+                    - withoutsolar.iloc[j]["minuteofday"]
+                )
+                ** (1 / n)
+            ) / 1440 ** (1 / n)
+            n = 3
+            score += (
+                self.max_loadgap ** (1 / n)
+                - abs(
+                    withoutsolar.iloc[i]["consumption"]
+                    - withoutsolar.iloc[j]["consumption"]
+                )
+                ** (1 / n)
+            ) / self.max_loadgap ** (1 / n)
+            self.total_pairs.append([i, j, score])
 
     def pair_selection(self, data_copy, withoutsolar, target_pair_number):
 
