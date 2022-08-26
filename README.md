@@ -16,7 +16,7 @@ The second file contains:
 - Solar irradiance information. 
 The number of solar cusoters and nonsolar customers, the approximate latitude and longitude are also required as input variables.
 
-For solar disaggregation for individual customer, two files are needed: withsolar_ori.csv and withoytsolar_ori.csv. 
+For solar disaggregation for individual customer, two files are needed: withsolar_ori.csv and withoutsolar_ori.csv. 
 - The first file contains the smart grid data (including grid, solar, and total consumption) for each solar customer. 
 - The second file contains the smart grid data (including total consumption) for each non-solar customer. 
 
