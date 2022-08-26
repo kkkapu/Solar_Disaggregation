@@ -4,10 +4,12 @@ This project takes the net load data measured by smart meters and other widely a
 # How to use
 Before using the code, all the input data and variables should be prepared. 
 For solar disaggregation for aggregated customer, two files are needed: aggregated_withsolar.csv and aggregated_withoutsolar.csv. 
+
 The first file contains:
 - Time information 
 - Aggregation of grid data, solar data, and total consumption data, of customers with solar panels (solar data is only used to do validation) 
 - Other physical inputs. (obtained from NSRDB dataset.) \\
+
 The second file contains:
 - Time information 
 - The aggregation of total consumption data og customers without solar panels 
