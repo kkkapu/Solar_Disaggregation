@@ -29,7 +29,7 @@ class PhysicalModel(torch.nn.Module):
                 * torch.cos(self.gamma - x[:, 14])
             )
             + x[:, 8] * ((1 + torch.cos(self.beta)) / 2)
-            + (I_bt + x[:, 7]) * self.rho * (1 - torch.cos(self.beta)) / 2
+            + (I_bt + x[:, 8]) * self.rho * (1 - torch.cos(self.beta)) / 2
         )
         T_pv = x[:, 6] + I_pv / 800 * (self.noct - 20)
         out = self.capacity * I_pv / 1000 * (1 - self.tem * (T_pv - 25))
