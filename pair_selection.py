@@ -9,16 +9,22 @@ class Helper:
             withoutsolar["consumption"]
         )
 
-    def get_similarity_score(self, data_copy, withoutsolar, i, j):
+    def get_similarity_score(self, data_copy, withoutsolar, i, j, dis_type):
         kk1 = withoutsolar[i : i + 1].index[0]
         kk2 = withoutsolar[j : j + 1].index[0]
 
         grid1 = data_copy[data_copy.index == kk1]["grid"].values[0]
         grid2 = data_copy[data_copy.index == kk2]["grid"].values[0]
         
-        threshold=np.std(data_copy["grid"])
+        threshold=np.std(data_copy["grid"]) 
+        if dis_type == "individual":
+            threshold_level = 1
+        elif dis_type == "aggregated":
+            threshold_level = 1
+        else:
+            print("disaggregation type should either be individual or aggregated")
         
-        if abs(grid1-grid2)<=threshold:
+        if abs(grid1-grid2)<=threshold * threshold_level:
             score = 0
             n = 1.5
             score += (
