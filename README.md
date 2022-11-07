@@ -17,7 +17,7 @@ The first file (i.e., aggregated_withsolar.csv) contains:
   - grid: the netload of the aggregate customer 
   - consumption: the (total) load of the aggregate customer (= solar + grid)
   
-  3. Other physical inputs. (obtained from NSRDB dataset)
+  3.Other physical inputs. (obtained from NSRDB dataset)
   - temperature: temperature at the given time index
   - zenith: zenith angle of the sun
   - DHI: diffuse horizontal irradiance
