@@ -7,27 +7,34 @@ For solar disaggregation for aggregated customer, two files are needed: aggregat
 
 The first file (i.e., aggregated_withsolar.csv) contains:
   
-  1.Time information 
+  1. Time information 
   - dayofyear: the day of the year (between 1 and 366)
   - timeofday: the hour of the day (between 0 and 23)
   - minute: minute of the hour
   
-  2.Load information
+  2. Load information
   - solar: the groud truth of solar generation (only used in validation)
   - grid: the netload of the aggregate customer 
   - consumption: the (total) load of the aggregate customer (= solar + grid)
   
-  3.Other physical inputs. (obtained from NSRDB dataset)
+  3. Other physical inputs. (obtained from NSRDB dataset)
   - temperature: temperature at the given time index
   - zenith: zenith angle of the sun
   - DHI: diffuse horizontal irradiance
   - DNI: direct horizotal irradiance
   - GHI: global horizontal irradiance
 
-The second file contains:
-- Time information 
-- The aggregation of total consumption data og customers without solar panels 
-- Solar irradiance information. 
+The first file (i.e., aggregated_withoutsolar.csv) contains:
+  1. Time information 
+    - dayofyear: the day of the year (between 1 and 366)
+    - timeofday: the hour of the day (between 0 and 23)
+    - minute: minute of the hour
+  2. Load information
+    - consumption: the (total) load of the aggregate customer (= solar + grid)
+  3. Other physical inputs. (obtained from NSRDB dataset)
+    - DHI: diffuse horizontal irradiance
+    - DNI: direct horizotal irradiance
+    - GHI: global horizontal irradiance
 The number of solar cusoters and nonsolar customers, the approximate latitude and longitude are also required as input variables.
 
 For solar disaggregation for individual customer, two files are needed: withsolar_ori.csv and withoutsolar_ori.csv. 
