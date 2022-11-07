@@ -8,9 +8,9 @@ For solar disaggregation for aggregated customer, two files are needed: aggregat
 The first file (i.e., aggregated_withsolar.csv) contains:
   
   1. Time information 
-  >> - dayofyear: the day of the year (between 1 and 366)
-  >> - timeofday: the hour of the day (between 0 and 23)
-  >> - minute: minute of the hour
+    - dayofyear: the day of the year (between 1 and 366)
+    - timeofday: the hour of the day (between 0 and 23)
+    - minute: minute of the hour
   
   2. Load information
   >>- solar: the groud truth of solar generation of the aggregate PV-customer (only used in validation)
