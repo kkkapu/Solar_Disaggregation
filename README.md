@@ -33,7 +33,7 @@ The second file (i.e., aggregated_withoutsolar.csv) contains:
    - minute: minute of the hour
 
 2. Load information
-   - consumption: the (total) load of the aggregate non-PV customer (= the net load + the ground truth solar generation)
+   - consumption: the (total) load of the aggregate non-PV customer (= solar + grid)
 
 3. Other physical inputs. (obtained from the NSRDB dataset)
    - DHI: diffuse horizontal irradiance
@@ -77,5 +77,5 @@ The first file (i.e., withsolar_ori.csv) contains:
 1. Run Solar_disaggregation_individual_unsupervised_TX.ipynb to perform individual solar disaggregation by using our proposed similarity based unsupervised method.
 
 # Summary of the output
-The three ipynb will return csv files with one additional column called "prediction" which is the estimated solar generation, one additional column called "load" which is the estimated (total) consumption (i.e., the estimated solar generation + netload).
+The three ipynb will return csv files with one additional column called "prediction" which is the estimated solar generation, one additional column called "load" which is the estimated (total) consumption (i.e., the estimated solar generation + net load).
 
